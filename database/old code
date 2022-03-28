@@ -1,0 +1,22 @@
+//render the image on a map tile based on X,Y provided
+function render (xTile,yTile, img, map, mapTile, sprX, sprY) {
+  
+  for (let i = 0; i < yTile; i++){ 
+
+    for (let f = 0; f < xTile; f++){ 
+      if (map["y"+(i)][f] == mapTile)
+      image(img,f*tileSize,i*tileSize,tileSize,tileSize, sprX, sprY,100,100)
+    }   
+  }
+}
+
+function grid (mapIn) {
+  render(20,20,imgSheet,mapIn,0,0,0)
+  render(20,20,imgSheet,mapIn,1,100,0)
+  render(20,20,imgSheet,mapIn,2,0,100)
+  render(20,20,imgSheet,mapIn,3,200,0)
+}
+
+function things (mapIn){
+  render(20,20,objSheet,mapIn,1,0,0)
+}
